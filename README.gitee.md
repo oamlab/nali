@@ -43,7 +43,7 @@
 ````
 git clone https://github.com/oamlab/nali.git
 cd nali/nali
-./configure
+bash ./configure
 make
 make install
 ````
