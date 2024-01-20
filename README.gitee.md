@@ -41,7 +41,7 @@
 
 - 1、安装
 ````
-git clone https://github.com/oamlab/nali.git
+git clone https://gitee.com/oamlab/nali.git
 cd nali/nali
 bash ./configure
 make
