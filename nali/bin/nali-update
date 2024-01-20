@@ -1,0 +1,32 @@
+#!/bin/sh
+qqwry_dat_url="https://chenze.name/wenjian/QQWry.Dat";
+qqwry_dat_local_path="/usr/local/share/QQWry.Dat"
+curl=`which curl`
+wget=`which wget`
+
+if ! test -w $qqwry_dat_local_path
+then
+    echo You may need sudo
+    exit 1
+fi
+
+if test -f /tmp/QQWry.Dat
+then
+    rm -f /tmp/QQWry.Dat || exit 1
+fi
+
+if test "x$curl" != "x" &&  test -x $curl 
+then
+    command="$curl -k --compressed $qqwry_dat_url -o /tmp/QQWry.Dat"
+elif test "x$wget" != "x" &&  test -x $wget
+then
+    command="$wget --no-check-certificate $qqwry_dat_url -O /tmp/QQWry.Dat"
+else
+    echo Error: Please install curl or wget
+    exit 1
+fi 
+echo Updating $qqwry_dat_local_path
+$command && mv /tmp/QQWry.Dat $qqwry_dat_local_path && echo Successfully Updated && exit 0
+
+echo Failed to update
+exit 1
