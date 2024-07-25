@@ -27,7 +27,7 @@
 | **XXX**         | XXX@XXX.com     |
 
 ## 🔒 Background
-- During the use of Linux, it is sometimes necessary to analyze the IP's location.
+- When using Linux, sometimes you need to analyze the location of the IP.
 
 ## 🔑 Purpose
 - Analyze the location of the IP.
